@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+
+// See README for for Google Oauth Instructions
+// You will need to create this config file where you
+// can store your Google Oauth ClientId is you so desire
 import { clientId } from '../config/gapi';
 
 class GoogleAuth extends Component {
@@ -25,6 +29,7 @@ class GoogleAuth extends Component {
 	};
 
 	renderAuthButton() {
+		// TODO I do not like this approach - will refactor
 		if (this.state.isSignedIn === null) {
 			return null;
 		} else if (this.state.isSignedIn) {
